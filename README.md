@@ -1,63 +1,186 @@
-# KERNEL-DENSITY-ESTIMATION-BASED-DEFENSE-AGAINST-MODEL-POISONING-IN-FEDERATED-LEARNING
-A Kernel Density Estimation (KDE)–based defense for federated learning that detects and mitigates model poisoning attacks. Protects the global model by identifying anomalous updates from malicious clients, ensuring secure and robust collaborative training across multiple participants.
+# KDE-Based Defense in Federated Learning 🔐
 
-Project Overview
+A *Kernel Density Estimation (KDE)–based defense mechanism* for Federated Learning that detects and mitigates model poisoning attacks. The system protects the global model by identifying anomalous updates from malicious clients, ensuring secure and robust collaborative training across multiple participants.
 
-This project leverages Artificial Intelligence (AI) in federated learning to build robust models resistant to model poisoning attacks. Using Convolutional Neural Networks (CNNs) and Kernel Density Estimation (KDE), the system trains AI models collaboratively across clients while identifying malicious updates to protect the global model.
+---
 
-AI Highlights
-1. Deep Learning with CNNs: Trains AI models on MNIST to classify handwritten digits.
-2. Federated Learning: Multiple clients contribute to a global model without sharing raw data.
-3. Adversarial Defense: Uses KDE-based anomaly detection to prevent poisoned model updates from degrading AI performance.
-4. Visualization: AI-driven metrics show the effectiveness of defense in terms of accuracy and model size.
+## Project Overview
 
-Repository Structure
+This project leverages *Artificial Intelligence (AI)* and *Federated Learning (FL)* to build deep learning models that are resilient to model poisoning attacks.
+
+Using *Convolutional Neural Networks (CNNs)* and *Kernel Density Estimation (KDE)*, the system:
+
+* Trains models collaboratively across multiple clients
+* Detects malicious or poisoned model updates
+* Prevents adversarial updates from degrading global model performance
+* Maintains accuracy and robustness in distributed environments
+
+The implementation demonstrates how AI systems can be secured in collaborative, multi-client learning environments.
+
+---
+
+## AI Highlights
+
+* *Deep Learning with CNNs*
+  Trains CNN models on the MNIST dataset to classify handwritten digits.
+
+* *Federated Learning Architecture*
+  Multiple clients train locally and send model updates to a central server without sharing raw data.
+
+* *KDE-Based Adversarial Defense*
+  Uses Kernel Density Estimation to detect anomalous (poisoned) client updates before aggregation.
+
+* *Attack Simulation*
+  Includes poisoned model training to test robustness of the defense mechanism.
+
+* *Visualization & Metrics*
+  Displays accuracy comparison between:
+
+  * No Defense
+  * KDE Defense
+    Also visualizes model size and performance trends.
+
+---
+
+## Repository Structure
+
+
 KDE/
+├── README.md              # Project overview and instructions
+├── requirements.txt       # Python dependencies
+├── Main.py                # Client-side GUI application
+├── Server.py              # Server-side script implementing KDE defense
+├── Dataset/
+│   └── mnist.csv          # MNIST dataset in CSV format (user must add)
+├── cnn_weights.hdf5       # Generated genuine CNN weights (auto-created)
+├── poison_weights.hdf5    # Generated poisoned CNN weights (auto-created)
+├── poison_history.pckl    # Training history of poisoned model (auto-created)
+└── graphs/                # Accuracy and model size visualizations (generated)
 
-├── README.md # Project overview and instructions
 
-├── requirements.txt # Python dependencies
+---
 
-├── Main.py # Main AI client script
+## Dataset
 
-├── Server.py # Server-side script for AI defense
+This project requires the *MNIST dataset in CSV format (mnist.csv)*.
 
-└── Dataset/ # Folder for mnist.csv (user must add)
+### Dataset Setup:
 
-Dataset
-Requires MNIST dataset in CSV format (mnist.csv).
-Place the CSV in a folder named Dataset at the root of the repo.
-The AI models in the project are trained on this dataset.
-Download link: [Kaggle MNIST CSV](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv) 
+1. Download MNIST dataset in CSV format from: [Kaggle MNIST CSV](https://www.kaggle.com/oddrationale/mnist-in-csv)  
+2. Create a folder named:
 
-Setup
-Clone the repository:
-git clone <repository-url>
 
-Install dependencies:
+Dataset/
+
+
+3. Place mnist.csv inside the Dataset/ folder at the root of the repository.
+
+The CNN models in this project are trained using this dataset.
+
+---
+
+## Requirements
+
+Install the required dependencies:
+
+bash
 pip install -r requirements.txt
 
-Running the Project - 
 
-Start the server: python Server.py
+Typical dependencies include:
 
-Start the client GUI: python Main.py
+* TensorFlow / Keras
+* NumPy
+* Pandas
+* Matplotlib
+* Scikit-learn
+* Pickle
 
-In the GUI, follow this workflow:
+---
 
-1. Upload MNIST Dataset → Load data for AI model training
-2. Preprocess Dataset → Normalize and split data
-3. Upload Genuine Model to Server → Train and send AI model
-4. Upload Poison Model to Server → Train poisoned AI model for testing defense
-5. Propose KDE & No Defence Accuracy → Compare AI performance with and without KDE defense
-6. Extension Model Size Graph → Visualize compression effect on AI model
+## Setup Instructions
 
-Notes:
-The following files are automatically generated when you run the project:
-1. cnn_weights.hdf5 → Trained genuine CNN weights
-2. poison_weights.hdf5 → Trained poisoned CNN weights
-3. poison_history.pckl → Training history of the poisoned model
-   
-→ Ensure the server is running before uploading models.
+### 1️⃣ Clone the Repository
 
-→ The system demonstrates how AI can be secured in collaborative, multi-client learning environments.
+bash
+git clone https://github.com/yourusername/KDE.git
+cd KDE
+
+
+### 2️⃣ Install Dependencies
+
+bash
+pip install -r requirements.txt
+
+
+---
+
+## Running the Project
+
+### Step 1: Start the Server
+
+bash
+python Server.py
+
+
+The server initializes the global model and activates the KDE-based defense mechanism.
+
+---
+
+### Step 2: Start the Client GUI
+
+Open a new terminal and run:
+
+bash
+python Main.py
+
+
+---
+
+## GUI Workflow
+
+Follow this sequence inside the client interface:
+
+1. *Upload MNIST Dataset*
+   Load data for AI model training.
+
+2. *Preprocess Dataset*
+   Normalize and split dataset for CNN training.
+
+3. *Upload Genuine Model to Server*
+   Train and send legitimate model updates.
+
+4. *Upload Poison Model to Server*
+   Train a poisoned model to simulate adversarial attack.
+
+5. *Propose KDE & No Defense Accuracy*
+   Compare model performance:
+
+   * With KDE defense
+   * Without defense
+
+6. *Extension Model Size Graph*
+   Visualize the compression and size comparison of models.
+
+---
+
+## Automatically Generated Files
+
+The following files are created automatically when running the project:
+
+* cnn_weights.hdf5 → Trained genuine CNN model weights
+* poison_weights.hdf5 → Trained poisoned CNN model weights
+* poison_history.pckl → Training history of poisoned model
+
+⚠️ Ensure the server is running before uploading models from the client GUI.
+
+---
+
+## Security Demonstration
+
+This project demonstrates:
+
+* How model poisoning attacks affect federated learning
+* How KDE can detect anomalous updates
+* How defensive aggregation preserves global model integrity
+* How AI systems can be secured in distributed environments
