@@ -54,9 +54,10 @@ In the GUI, follow this workflow:
 
 Notes:
 The following files are automatically generated when you run the project:
-cnn_weights.hdf5 → Trained genuine CNN weights
-poison_weights.hdf5 → Trained poisoned CNN weights
-poison_history.pckl → Training history of the poisoned model
-Ensure the server is running before uploading models.
+1. cnn_weights.hdf5 → Trained genuine CNN weights
+2. poison_weights.hdf5 → Trained poisoned CNN weights
+3. poison_history.pckl → Training history of the poisoned model
+   
+→ Ensure the server is running before uploading models.
 
 → The system demonstrates how AI can be secured in collaborative, multi-client learning environments.
