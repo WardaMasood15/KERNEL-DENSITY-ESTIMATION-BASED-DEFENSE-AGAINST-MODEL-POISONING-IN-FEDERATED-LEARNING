@@ -13,6 +13,7 @@ AI Highlights
 
 Repository Structure
 KDE/
+
 ├── README.md # Project overview and instructions
 
 ├── requirements.txt # Python dependencies
@@ -37,6 +38,7 @@ Install dependencies:
 pip install -r requirements.txt
 
 Running the Project - 
+
 Start the server: python Server.py
 
 Start the client GUI: python Main.py
