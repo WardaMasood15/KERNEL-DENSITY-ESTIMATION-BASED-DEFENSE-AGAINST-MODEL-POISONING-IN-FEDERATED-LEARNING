@@ -163,4 +163,12 @@ This project demonstrates:
 * How defensive aggregation preserves global model integrity
 * How AI systems can be secured in distributed environments
 
-Do you want me to do that too?
+## Output Screens
+
+Shows successful loading, normalization, and train–test splitting of the MNIST dataset.
+<img width="1046" height="530" alt="image" src="https://github.com/user-attachments/assets/ce3f88dd-afad-4996-88fc-fc46a42476cd" />
+
+---
+
+Displays KDE defense results with accuracy comparison and model size reduction after rejecting poisoned updates.
+<img width="1047" height="528" alt="image" src="https://github.com/user-attachments/assets/ddfff47e-7e0e-4b6f-bdf4-4374adc4037f" />
