@@ -6,10 +6,10 @@ Project Overview
 This project leverages Artificial Intelligence (AI) in federated learning to build robust models resistant to model poisoning attacks. Using Convolutional Neural Networks (CNNs) and Kernel Density Estimation (KDE), the system trains AI models collaboratively across clients while identifying malicious updates to protect the global model.
 
 AI Highlights
-→ Deep Learning with CNNs: Trains AI models on MNIST to classify handwritten digits.
-→ Federated Learning: Multiple clients contribute to a global model without sharing raw data.
-→ Adversarial Defense: Uses KDE-based anomaly detection to prevent poisoned model updates from degrading AI performance.
-→ Visualization: AI-driven metrics show the effectiveness of defense in terms of accuracy and model size.
+1. Deep Learning with CNNs: Trains AI models on MNIST to classify handwritten digits.
+2. Federated Learning: Multiple clients contribute to a global model without sharing raw data.
+3. Adversarial Defense: Uses KDE-based anomaly detection to prevent poisoned model updates from degrading AI performance.
+4. Visualization: AI-driven metrics show the effectiveness of defense in terms of accuracy and model size.
 
 Repository Structure
 KDE/
