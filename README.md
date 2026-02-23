@@ -14,9 +14,13 @@ AI Highlights
 Repository Structure
 KDE/
 ├── README.md # Project overview and instructions
+
 ├── requirements.txt # Python dependencies
+
 ├── Main.py # Main AI client script
+
 ├── Server.py # Server-side script for AI defense
+
 └── Dataset/ # Folder for mnist.csv (user must add)
 
 Dataset
