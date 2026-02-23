@@ -1,8 +1,4 @@
-Perfect! Here’s a fully polished, **GitHub-ready README** with the tree properly formatted, dataset instructions, AI emphasis, workflow, and auto-generated files clearly explained:
-
----
-
-# KDE-Based Defense in Federated Learning 🔐
+# KDE-Based Defense in Federated Learning 
 
 A *Kernel Density Estimation (KDE)–based defense mechanism* for Federated Learning that detects and mitigates model poisoning attacks. The system protects the global model by identifying anomalous updates from malicious clients, ensuring secure and robust collaborative training across multiple participants.
 
